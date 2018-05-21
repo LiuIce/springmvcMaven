@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>springmvcMaven</groupId>
+  <artifactId>springmvcMaven</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>springmvcMaven Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-webmvc</artifactId>
+    	<version>4.2.2.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.mybatis</groupId>
+    	<artifactId>mybatis-spring</artifactId>
+    	<version>1.2.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.mybatis</groupId>
+    	<artifactId>mybatis</artifactId>
+    	<version>3.2.7</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-jdbc</artifactId>
+    	<version>3.2.10.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.commons</groupId>
+    	<artifactId>commons-pool2</artifactId>
+    	<version>2.4.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context</artifactId>
+    	<version>4.2.2.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-test</artifactId>
+    	<version>3.2.10.RELEASE</version>
+    </dependency>
+     <!-- datasource -->
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>druid</artifactId>
+		<version>1.0.11</version>
+	</dependency>
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>9.3-1102-jdbc41</version>
+	</dependency>
+
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>servlet-api</artifactId>
+		  <version>2.5</version>
+		  <scope>provided</scope>
+	  </dependency>
+  </dependencies>
+
+
+<build>
+		<finalName>springmvcMaven</finalName>
+
+		<!-- <filters>
+			<filter>src/main/resources/filters/filter-${env}.properties</filter>
+		</filters> -->
+
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.xsd</include>
+					<include>**/*.properties</include>
+					<include>**/*.vm</include>
+				</includes>
+				<excludes>
+					<exclude>filters/*.*</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>logback.xml</include>
+				</includes>
+				<excludes>
+					<exclude>filters/*.*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<server>tomcat7</server>
+					<url>http://127.0.0.1:8080/manager</url>
+					<port>8090</port>
+					<path>/ws-jkzg-code</path>
+					<contextReloadable>false</contextReloadable>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+  <!-- <build>
+   <finalName>springmvcMaven</finalName>
+    <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+        </configuration>
+    </plugin>
+    </plugins>
+</build> -->
+  
+</project>

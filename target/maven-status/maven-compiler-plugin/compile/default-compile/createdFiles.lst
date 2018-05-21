@@ -1,0 +1,14 @@
+com\test\dao\UsersDao.class
+com\test\domain\UserBeans.class
+com\test\controller\TestDemo.class
+com\test\controller\JavaProxyTest$1.class
+com\test\mapper\UsersMapper.class
+com\test\domain\User.class
+springmvcMaven\HelloWorldSpringBean.class
+com\test\controller\BeanFactoryTest.class
+com\test\service\UserServiceImpl.class
+com\test\controller\LoginController.class
+com\test\service\UsersService.class
+com\test\view\HelloView.class
+com\test\controller\JavaProxyTest.class
+springmvcMaven\HelloWorld.class
